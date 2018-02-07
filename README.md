@@ -1,7 +1,7 @@
 # \<classic-popover\>
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/yuanfux/classic-popover)
 
-A popover component empowered by Popper.js
+A Polymer popover component empowered by Popper.js
 
 ## Preview
 An easy to use and run-time configurable popover component based on Polymer 2.0.
@@ -42,7 +42,7 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 ## Properties
 
 Prop Name | Description | Type | Example | Default | Reactive
---- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | ---
 for | the attached target element id | string | 'reference' | - | true
 placement | the initial placement of popover | string | 'top', 'right', 'bottom', 'left' | 'bottom' | true
 content | the content of popover | string | 'popover content' | - | true
