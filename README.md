@@ -49,7 +49,7 @@ content | the content of popover | string | 'popover content' | - | true
 header | the header of popover | string | 'popover header' | - | true
 offset | the offset of popover | string | '10, 10', '10%, 10', '10%, 10%' | '0, 0' | true
 z-index | the z-index of popover | number | 1000 | 999 | true
-type | the type of popover header | string | 'default', 'danger', 'warning', 'info', 'success', 'primary' | true
+type | the type of popover header | string | 'default', 'danger', 'warning', 'info', 'success', 'primary' | 'default' | true
 custom | if true the `content` will be omitted, `slot` will be enabled | boolean | false | false | false
 hidden | if true the popover will be visible | boolean | false | false | true
 
