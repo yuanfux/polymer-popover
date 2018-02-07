@@ -1,0 +1,25 @@
+{
+  "name": "classic-popover",
+  "description": "A Polymer popover component empowered by Popper.js",
+  "main": "classic-popover.html",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "popper.js": "^1.12.9"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  },
+  "keywords": ["popover", "popper", "tooltip", "polymer"],
+  "authors": ["Yuan Fu <yuanfu@usc.edu>"],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test"
+  ]
+}

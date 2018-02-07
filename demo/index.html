@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>classic-popover demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../classic-popover.html">
+
+    <custom-style>
+      <style is="custom-style">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic classic-popover demo</h3>
+      <demo-snippet>
+        <template>
+          <style>
+            .showcase-container {
+              width: 2000px; 
+              overflow: scroll; 
+              padding-top: 500px; 
+              padding-bottom: 500px;
+              padding-left: 300px;
+            }
+            .button {
+              width: 200px;
+              background-color: #f7f7f7;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 5px;
+              -webkit-transition-duration: 0.4s;
+              transition-duration: 0.4s;
+              cursor: pointer;
+            }
+            .button-default {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #f7f7f7;
+            }
+
+            .button-default:hover {
+              background-color: #f7f7f7;
+              color: black;
+            }
+
+            .button-danger {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #d9534f;
+            }
+
+            .button-danger:hover {
+              background-color: #d9534f;
+              color: white;
+            }
+
+            .button-warning {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #f0ad4e;
+            }
+
+            .button-warning:hover {
+              background-color: #f0ad4e;
+              color: white;
+            }
+
+            .button-info {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #5bc0de;
+            }
+
+            .button-info:hover {
+              background-color: #5bc0de;
+              color: white;
+            }
+
+            .button-success {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #5cb85c;
+            }
+
+            .button-success:hover {
+              background-color: #5cb85c;
+              color: white;
+            }
+
+            .button-primary {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #337ab7;
+            }
+
+            .button-primary:hover {
+              background-color: #337ab7;
+              color: white;
+            }
+
+            .font-style {
+              font-family: 'Roboto', 'Noto', sans-serif;
+            }
+
+          </style>
+          <!-- <div style="position: relative; height: 800px; width: 800px; overflow: scroll"> -->
+            <!-- <div style="height: 200%; display: flex;flex-direction: column; justify-content: center; align-items: center;"> -->
+            <div class="showcase-container">
+              <div>
+                <h2 class="font-style">
+                  No header
+                </h2>
+                <button class="button button-default" id="noHeader" onclick="changePopoverVisibility('noHeader')">No Header</button>
+              </div>
+              <div>
+                <h2 class="font-style">
+                  6 types of header
+                </h2>
+              </div>
+              <div>
+                <button class="button button-default" id="default" onclick="changePopoverVisibility('default')">Default</button>
+                <button class="button button-danger" id="danger" onclick="changePopoverVisibility('danger')">Danger</button>
+                <button class="button button-warning" id="warning" onclick="changePopoverVisibility('warning')">Warning</button>
+              </div>
+              <div style="margin-top: 27px;">
+                <button class="button button-info" id="info" onclick="changePopoverVisibility('info')">Info</button>
+                <button class="button button-success" id="success" onclick="changePopoverVisibility('success')">Success</button>
+                <button class="button button-primary" id="primary" onclick="changePopoverVisibility('primary')">Primary</button>
+              </div>
+              <div>
+                <h2 class="font-style">
+                  Custom content
+                </h2>
+              </div>
+              <div>
+                <button class="button button-default" id="custom" onclick="changePopoverVisibility('custom')" header="This is the popover header">Custom content</button>
+              </div>
+              <classic-popover for="noHeader" placement="left" content="This is the popover content">
+                <div slot="custom-content">
+                  <ol>
+                    <li>milk</li>
+                    <li>tea</li>
+                    <li>shit</li>
+                    <li>whatever</li>
+                    <li>juice</li>
+                    <li>drink</li>
+                  </ol>
+                </div>
+              </classic-popover>
+              <classic-popover for="default" placement="left" content="This is the popover content" header="This is the popover title" offset="0, 0" type="default">
+                <div slot="custom-content">
+                  <ol>
+                    <li>milk</li>
+                    <li>tea</li>
+                    <li>shit</li>
+                    <li>whatever</li>
+                    <li>juice</li>
+                    <li>drink</li>
+                  </ol>
+                </div>
+              </classic-popover>
+
+              <classic-popover for="danger" placement="top" content="This is the popover content" header="This is the popover title" offset="0, 0" type="danger">
+              </classic-popover>
+
+              <classic-popover for="warning" placement="right" content="This is the popover content" header="This is the popover title" offset="0, 0" type="warning">
+              </classic-popover>
+
+              <classic-popover for="info" placement="left" content="This is the popover content" header="This is the popover title" offset="0, 0" type="info">
+              </classic-popover>
+
+              <classic-popover for="success" placement="bottom" content="This is the popover content" header="This is the popover title" offset="0, 0" type="success">
+              </classic-popover>
+
+              <classic-popover for="primary" placement="right" content="This is the popover content" header="This is the popover title" offset="0, 0" type="primary">
+              </classic-popover>
+              <classic-popover for="custom" placement="bottom" header="This is a list of all available Drinks" custom>
+                <div slot="custom-content">
+                  <ol>
+                    <li>Milk</li>
+                    <li>Tea</li>
+                    <li>Orange Juice</li>
+                    <li>Red Wine</li>
+                    <li>Diet Coke</li>
+                    <li>Apple Juice</li>
+                  </ol>
+                </div>
+              </classic-popover>
+            </div>
+        </template>
+        <script>
+          function changePopoverVisibility(id) {
+            const popover = Polymer.dom(this.root).querySelector(`[for=${id}]`);
+            popover.hidden = !popover.hidden;
+          }
+
+          function randomZIndex(id) {
+            const popover = Polymer.dom(this.root).querySelector(`[for=${id}]`);
+            popover['z-index'] = Math.floor(Math.random() * 10) <=4 ? 500 : 2000;
+          }
+
+          function combinedHelper(id) {
+            this.changePopoverVisibility(id);
+            this.randomZIndex(id);
+          }
+        </script>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

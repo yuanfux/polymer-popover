@@ -1,0 +1,710 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-if.html">
+<link rel="import" href="popperjs-import.html">
+<dom-module id="classic-popover">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .popover-container-top {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        margin-bottom: 10px;
+        width: auto;
+        max-width: 276px;
+        z-index: 1060;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: .3rem;
+      }
+
+      .popover-container-bottom {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        margin-top: 10px;
+        width: auto;
+        max-width: 276px;
+        z-index: 1060;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: .3rem;
+      }
+      .popover-container-bottom-header-danger,
+      .popover-container-bottom-header-warning,
+      .popover-container-bottom-header-info,
+      .popover-container-bottom-header-success,
+      .popover-container-bottom-header-primary,
+      .popover-container-bottom-header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        margin-top: 10px;
+        width: auto;
+        max-width: 276px;
+        z-index: 1060;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: .3rem;
+      }
+
+      .popover-container-left {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        margin-right: 10px;
+        width: auto;
+        max-width: 276px;
+        z-index: 1060;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: .3rem;
+      }
+
+      .popover-container-right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        margin-left: 10px;
+        width: auto;
+        max-width: 276px;
+        z-index: 1060;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: .3rem;
+      }
+
+      .popover-header-default {
+        z-index: 1060;
+        padding: 8px 14px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+      }
+
+      .popover-header-danger {
+        z-index: 1060;
+        padding: 8px 14px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #d9534f;
+        color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+      }
+
+      .popover-header-warning {
+        z-index: 1060;
+        padding: 8px 14px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #f0ad4e;
+        color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+      }
+
+      .popover-header-info {
+        z-index: 1060;
+        padding: 8px 14px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #5bc0de;
+        color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+      }
+
+      .popover-header-success {
+        z-index: 1060;
+        padding: 8px 14px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #5cb85c;
+        color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+      }
+
+      .popover-header-primary {
+        z-index: 1060;
+        padding: 8px 14px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #337ab7;
+        color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+      }
+
+
+      .popover-content {
+        z-index: 1060;
+        background-color: white;
+        padding: 15px 14px;
+        border-radius: .3rem;
+      }
+
+      .popover-content p{
+        z-index: 1060;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        font-size: .875rem;
+        margin: 0;
+        word-wrap: break-word;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      .popover-container-top::before {
+        position: absolute;
+        left: 50%;
+        bottom: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-top::after {
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #fff;
+      }
+
+      .popover-container-bottom-header::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom-header::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #f7f7f7;
+      }
+
+      .popover-container-bottom-header-danger::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom-header-danger::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #d9534f;
+      }
+
+      .popover-container-bottom-header-warning::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom-header-warning::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #f0ad4e;
+      }
+
+      .popover-container-bottom-header-info::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom-header-info::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #5bc0de;
+      }
+
+      .popover-container-bottom-header-success::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom-header-success::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #5cb85c;
+      }
+
+      .popover-container-bottom-header-primary::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom-header-primary::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #337ab7;
+      }
+
+      .popover-container-bottom::before {
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,.2);
+      }
+
+      .popover-container-bottom::after {
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      .popover-container-right::before {
+        position: absolute;
+        top: 50%;
+        margin-top: -11px;
+        left: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-right: 11px solid rgba(0,0,0,.2);
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+      }
+
+      .popover-container-right::after {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        left: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-right: 10px solid #fff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+       .popover-container-left::before {
+        position: absolute;
+        top: 50%;
+        margin-top: -11px;
+        right: -11px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 11px solid rgba(0,0,0,.2);
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+      }
+
+      .popover-container-left::after {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        right: -10px;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid #fff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .fade-in {
+        animation: fadeInAnimation 0.15s linear forwards;
+      }
+
+      .fade-out {
+        animation: fadeOutAnimation 0.15s linear forwards;
+      }
+
+      @keyframes fadeInAnimation {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @keyframes fadeOutAnimation {
+        0% { opacity: 1; }
+        100% { opacity: 0; height: 0; }
+      }
+
+
+    </style>
+      <div style$="{{getZIndexStyle(z-index)}}" id="popover" class$="{{containerClass}}">
+        <template is="dom-if" if="{{header}}">
+          <div style$="{{getZIndexStyle(z-index)}}" class$="{{getPopoverHeaderClass(type, hidden)}}">
+            {{ header }}
+          </div>
+        </template>
+        <div style$="{{getZIndexStyle(z-index)}}" class$="{{getPopoverContentClass(hidden)}}">
+          <template is="dom-if" if="[[!custom]]">
+            <p>
+              {{ content }}
+            </p>
+          </template>
+          <template is="dom-if" if="[[custom]]">
+            <slot name="custom-content">
+            </slot>
+          </template>
+        </div>
+      </div>
+  </template>
+
+  <script>
+    /**
+     * `classic-popover`
+     * A Polymer popover component empowered by Popper.js
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class ClassicPopover extends Polymer.Element {
+      static get is() { return 'classic-popover'; }
+      static get properties() {
+        return {
+          content: String,
+          header: String,
+          type: {
+            type: String,
+            value: 'default'
+          },
+          for: {
+            type: String
+          },
+          placement: {
+            type: String,
+            value: 'bottom'
+          },
+          offset: {
+            type: String,
+            value: '0, 0'
+          },
+          custom: {
+            type: Boolean,
+            value: false
+          },
+          'z-index': {
+            type: Number,
+            value: 999
+          },
+          hidden: {
+            type: Boolean,
+            value: true
+          },
+          target: {
+            type: Object,
+            readOnly: true
+          },
+          body: {
+            type: Object,
+            readOnly: true
+          },
+          _TypeEnum: {
+            type: Array,
+            value: ['default', 'primary', 'success', 'info', 'warning', 'danger'],
+            readOnly: true
+          },
+          _PlacementEnum: {
+            type: Array,
+            value:['top', 'right', 'bottom', 'left'],
+            readOnly: true
+          },
+          _popperPlacement: {
+            type: String
+          },
+          _popperObject: {
+            type: Object,
+            readOnly: true
+          },
+          containerClass: {
+            type: String,
+            computed: 'getPopoverContainerClass(_popperPlacement, type, hidden)',
+            observer: 'updatePopper'
+          }
+        };
+      }
+
+      getZIndexStyle(zIndex) {
+        return `z-index: ${zIndex}`;
+      }
+
+      findTarget() {
+        if (this.for && this.body) {
+          const foundTarget = this.body.querySelector(`[id='${this.for}']`);
+          if (foundTarget) {
+            this._setTarget(foundTarget);
+            if (this['_popperObject']) {
+              this._popperObject.reference = this['target'];
+            }
+          } else {
+            console.error('<classic-popover>: Cannot find "target".');
+          }
+        } else {
+            console.error('<classic-popover>: The popover target may not be in the <body> tag.');
+        }
+      }
+
+      findBody() {
+        var parentNode = Polymer.dom(this).parentNode;
+        while (parentNode) {
+          if (parentNode.tagName === 'BODY') {
+            this._setBody(parentNode);
+            return;
+          }
+          parentNode = parentNode.parentNode;
+        }
+        return;
+      }
+
+      generatePopper() {
+        console.log(this.$);
+        if (this.target && this.$.popover) {
+          const popper = new Popper(
+              this.target,
+              this.$.popover,
+              {
+                placement: this['placement'],
+                modifiers: {
+                  offset: {
+                    offset: this['offset']
+                  },
+                  flip: {
+                    behavior: 'flip'
+                  }
+                },
+                onUpdate: (data) => {
+                  this['_popperPlacement'] = data.placement;
+                }
+              }
+          );
+          this._set_popperObject(popper);
+        } else {
+          console.error('<classic-popover>: Invalid prop "target".');
+        }
+      }
+
+      changePopperPlacement() {
+        if (this._popperObject) {
+          this._popperObject.options.placement = this['placement'];
+          this._popperObject.update();
+        } else {
+          console.error('<classic-popover>: change popover placement with no popover object set.');
+        }
+      }
+
+      getPopoverHeaderClass(headerType, hidden) {
+        if (hidden) return 'hidden';
+        let headerClass = 'popover-header';
+        if (headerType && this._TypeEnum.indexOf(headerType) !== -1) {
+          headerClass += '-' + headerType;
+          return headerClass;
+        } else {
+          return 'popover-header-default';
+        }
+      }
+
+      getPopoverContentClass(hidden) {
+        if (hidden) return 'hidden';
+        return 'popover-content';
+      }
+
+      getPopoverContainerClass(curPlacement, type, hidden) {
+        if (!curPlacement) {
+          return 'hidden';
+        }
+        else {
+          let append = '';
+          if (curPlacement === 'bottom' && this.header) {
+            append = '-header';
+            if (type !== 'default') {
+              append += '-' + type;
+            }
+          }
+          if (hidden) {
+            append +=  ' fade-out';
+          }
+          else {
+            append += ' fade-in';
+          }
+          return 'popover-container-' + curPlacement + append;
+        }
+      }
+
+      updatePopper() {
+        if (this._popperObject) {
+          this._popperObject.scheduleUpdate();
+        }
+      }
+
+      ready() {
+        super.ready();
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        this.generatePopper();
+      }
+
+      attributeChangedCallback(attributeName, oldVal, newVal) {
+        super.attributeChangedCallback(attributeName, oldVal, newVal);
+        if (attributeName === "placement") {
+          if (this._popperObject) {
+            this._popperObject.options.placement = this['placement'];
+            this.updatePopper();
+          }
+        }
+        else if (attributeName === "offset") {
+          if (this._popperObject) {
+            for (let i = 0 ; i < this._popperObject.modifiers.length ; i++) {
+              if (this._popperObject.modifiers[i].name === "offset") {
+                this._popperObject.modifiers[i].offset = this['offset'];
+                break;
+              }
+            }
+            this._popperObject.options.modifiers.offset.offset = this['offset'];
+            this.updatePopper();
+          }
+        } else if (attributeName === "for") {
+          if (!this.body) {
+            this.findBody();
+          }
+          this.findTarget();
+          this.updatePopper();
+        }
+        else if (["content", "header"].indexOf(attributeName) > -1) {
+          this.updatePopper();
+        }
+      }
+    }
+
+    window.customElements.define(ClassicPopover.is, ClassicPopover);
+  </script>
+</dom-module>
