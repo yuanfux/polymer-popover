@@ -4,7 +4,7 @@
 A popover component empowered by Popper.js
 
 ## Preview
-An easy to use and flexible popover component based on Polymer 2.0.
+An easy to use and run-time configurable popover component based on Polymer 2.0.
 
 ![gif broken](https://drive.google.com/uc?id=119jxrSGKR4FqHORDuBFiri3W4qDIV1Nx "classic-popover-demo")
 
@@ -41,17 +41,17 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 
 ## Properties
 
-Prop Name | Description | Type | Example | Default
+Prop Name | Description | Type | Example | Default | Reactive
 --- | --- | --- | --- | ---
-for | the attached target element id | string | 'reference' | -
-placement | the initial placement of popover | string | 'top', 'right', 'bottom', 'left' | 'bottom'
-content | the content of popover | string | 'popover content' | -
-header | the header of popover | string | 'popover header' | - 
-offset | the offset of popover | string | '10, 10', '10%, 10', '10%, 10%' | '0, 0'
-z-index | the z-index of popover | number | 1000 | 999
-type | the type of popover header | string | 'default', 'danger', 'warning', 'info', 'success', 'primary'
-custom | if true the `content` will be omitted, `slot` will be enabled | boolean | false | false
-hidden | if true the popover will be visible | boolean | false | false
+for | the attached target element id | string | 'reference' | - | true
+placement | the initial placement of popover | string | 'top', 'right', 'bottom', 'left' | 'bottom' | true
+content | the content of popover | string | 'popover content' | - | true
+header | the header of popover | string | 'popover header' | - | true
+offset | the offset of popover | string | '10, 10', '10%, 10', '10%, 10%' | '0, 0' | true
+z-index | the z-index of popover | number | 1000 | 999 | true
+type | the type of popover header | string | 'default', 'danger', 'warning', 'info', 'success', 'primary' | true
+custom | if true the `content` will be omitted, `slot` will be enabled | boolean | false | false | false
+hidden | if true the popover will be visible | boolean | false | false | true
 
 ## Slots
 
