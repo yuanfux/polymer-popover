@@ -517,7 +517,7 @@
           },
           hidden: {
             type: Boolean,
-            value: true
+            value: false
           },
           target: {
             type: Object,
@@ -585,7 +585,6 @@
       }
 
       generatePopper() {
-        console.log(this.$);
         if (this.target && this.$.popover) {
           const popper = new Popper(
               this.target,
