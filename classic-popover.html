@@ -573,7 +573,7 @@
       }
 
       findBody() {
-        var parentNode = Polymer.dom(this).parentNode;
+        var parentNode = this.parentNode;
         while (parentNode) {
           if (parentNode.tagName === 'BODY') {
             this._setBody(parentNode);
