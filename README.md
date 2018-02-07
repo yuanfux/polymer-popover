@@ -31,7 +31,9 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 ```
 -->
 ```html
-<div id="target" style="display: block; width: 50px; height: 50px; background-color: pink">
+<div style="padding: 200px;">
+	<div id="target" style="display: block; width: 50px; height: 50px; background-color: pink">
+	</div>
 </div>
 <classic-popover for="target" placement="left" content="This is the popover content">
 </classic-popover>
