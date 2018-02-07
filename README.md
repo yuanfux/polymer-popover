@@ -31,7 +31,7 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 ```
 -->
 ```html
-<div style="padding: 200px;">
+<div style="overflow: scroll; width: 2000px; padding: 350px;">
 	<div id="target" style="display: block; width: 50px; height: 50px; background-color: pink">
 	</div>
 </div>
