@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>classic-popover demo</title>
+    <title>polymer-popover demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../classic-popover.html">
+    <link rel="import" href="../polymer-popover.html">
 
     <custom-style>
       <style is="custom-style">
@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic classic-popover demo</h3>
+      <h3>Basic polymer-popover demo</h3>
       <demo-snippet>
         <template>
           <style>
@@ -146,7 +146,7 @@
               <div>
                 <button class="button button-default" id="custom" onclick="changePopoverVisibility('custom')" header="This is the popover header">Custom content</button>
               </div>
-              <classic-popover for="noHeader" placement="left" content="This is the popover content" hidden>
+              <polymer-popover for="noHeader" placement="left" content="This is the popover content" hidden>
                 <div slot="custom-content">
                   <ol>
                     <li>milk</li>
@@ -157,8 +157,8 @@
                     <li>drink</li>
                   </ol>
                 </div>
-              </classic-popover>
-              <classic-popover for="default" placement="left" content="This is the popover content" header="This is the popover title" offset="0, 0" type="default" hidden>
+              </polymer-popover>
+              <polymer-popover for="default" placement="left" content="This is the popover content" header="This is the popover title" offset="0, 0" type="default" hidden>
                 <div slot="custom-content">
                   <ol>
                     <li>milk</li>
@@ -169,23 +169,23 @@
                     <li>drink</li>
                   </ol>
                 </div>
-              </classic-popover>
+              </polymer-popover>
 
-              <classic-popover for="danger" placement="top" content="This is the popover content" header="This is the popover title" offset="0, 0" type="danger" hidden>
-              </classic-popover>
+              <polymer-popover for="danger" placement="top" content="This is the popover content" header="This is the popover title" offset="0, 0" type="danger" hidden>
+              </polymer-popover>
 
-              <classic-popover for="warning" placement="right" content="This is the popover content" header="This is the popover title" offset="0, 0" type="warning" hidden>
-              </classic-popover>
+              <polymer-popover for="warning" placement="right" content="This is the popover content" header="This is the popover title" offset="0, 0" type="warning" hidden>
+              </polymer-popover>
 
-              <classic-popover for="info" placement="left" content="This is the popover content" header="This is the popover title" offset="0, 0" type="info" hidden>
-              </classic-popover>
+              <polymer-popover for="info" placement="left" content="This is the popover content" header="This is the popover title" offset="0, 0" type="info" hidden>
+              </polymer-popover>
 
-              <classic-popover for="success" placement="bottom" content="This is the popover content" header="This is the popover title" offset="0, 0" type="success" hidden>
-              </classic-popover>
+              <polymer-popover for="success" placement="bottom" content="This is the popover content" header="This is the popover title" offset="0, 0" type="success" hidden>
+              </polymer-popover>
 
-              <classic-popover for="primary" placement="right" content="This is the popover content" header="This is the popover title" offset="0, 0" type="primary" hidden>
-              </classic-popover>
-              <classic-popover for="custom" placement="bottom" header="This is a list of all available Drinks" custom hidden>
+              <polymer-popover for="primary" placement="right" content="This is the popover content" header="This is the popover title" offset="0, 0" type="primary" hidden>
+              </polymer-popover>
+              <polymer-popover for="custom" placement="bottom" header="This is a list of all available Drinks" custom hidden>
                 <div slot="custom-content">
                   <ol>
                     <li>Milk</li>
@@ -196,7 +196,7 @@
                     <li>Apple Juice</li>
                   </ol>
                 </div>
-              </classic-popover>
+              </polymer-popover>
             </div>
         </template>
         <script>

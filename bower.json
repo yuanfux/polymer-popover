@@ -1,7 +1,7 @@
 {
-  "name": "classic-popover",
+  "name": "polymer-popover",
   "description": "A Polymer popover component empowered by Popper.js",
-  "main": "classic-popover.html",
+  "main": "polymer-popover.html",
   "license": "MIT",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",

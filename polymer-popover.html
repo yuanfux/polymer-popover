@@ -1,7 +1,7 @@
 <link rel="import" href="../polymer/polymer-element.html">
 <link rel="import" href="../polymer/lib/elements/dom-if.html">
 <link rel="import" href="popperjs-import.html">
-<dom-module id="classic-popover">
+<dom-module id="polymer-popover">
   <template>
     <style>
       :host {
@@ -479,15 +479,15 @@
 
   <script>
     /**
-     * `classic-popover`
+     * `polymer-popover`
      * A Polymer popover component empowered by Popper.js
      *
      * @customElement
      * @polymer
      * @demo demo/index.html
      */
-    class ClassicPopover extends Polymer.Element {
-      static get is() { return 'classic-popover'; }
+    class PolymerPopover extends Polymer.Element {
+      static get is() { return 'polymer-popover'; }
       static get properties() {
         return {
           content: String,
@@ -565,10 +565,10 @@
               this._popperObject.reference = this['target'];
             }
           } else {
-            console.error('<classic-popover>: Cannot find "target".');
+            console.error('<polymer-popover>: Cannot find "target".');
           }
         } else {
-            console.error('<classic-popover>: The popover target may not be in the <body> tag.');
+            console.error('<polymer-popover>: The popover target may not be in the <body> tag.');
         }
       }
 
@@ -606,7 +606,7 @@
           );
           this._set_popperObject(popper);
         } else {
-          console.error('<classic-popover>: Invalid prop "target".');
+          console.error('<polymer-popover>: Invalid prop "target".');
         }
       }
 
@@ -615,7 +615,7 @@
           this._popperObject.options.placement = this['placement'];
           this._popperObject.update();
         } else {
-          console.error('<classic-popover>: change popover placement with no popover object set.');
+          console.error('<polymer-popover>: change popover placement with no popover object set.');
         }
       }
 
@@ -704,6 +704,6 @@
       }
     }
 
-    window.customElements.define(ClassicPopover.is, ClassicPopover);
+    window.customElements.define(PolymerPopover.is, PolymerPopover);
   </script>
 </dom-module>
