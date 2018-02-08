@@ -1,21 +1,21 @@
-# \<classic-popover\>
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/yuanfux/classic-popover)
+# \<polymer-popover\>
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/yuanfux/polymer-popover)
 
 A Polymer popover component empowered by Popper.js
 
 ## Preview
 An easy to use and run-time configurable popover component based on Polymer 2.0.
 
-![gif broken](https://drive.google.com/uc?id=119jxrSGKR4FqHORDuBFiri3W4qDIV1Nx "classic-popover-demo")
+![gif broken](https://drive.google.com/uc?id=119jxrSGKR4FqHORDuBFiri3W4qDIV1Nx "polymer-popover-demo")
 
 ## Install
 1. Install bower dependency
 
-   `bower install classic-popover --save`
+   `bower install polymer-popover --save`
 
-2. Import classic-popover component into your project
+2. Import polymer-popover component into your project
 
-   `<link rel="import" href="YOUR_PATH/bower_components/classic-popover/classic-popover.html"`
+   `<link rel="import" href="YOUR_PATH/bower_components/polymer-popover/polymer-popover.html"`
 
 ## Usage
 ### Quick Start
@@ -24,7 +24,7 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="classic-popover.html">
+    <link rel="import" href="polymer-popover.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -35,8 +35,8 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 	<div id="target" style="display: block; width: 50px; height: 50px; background-color: pink">
 	</div>
 </div>
-<classic-popover for="target" placement="left" content="This is the popover content">
-</classic-popover>
+<polymer-popover for="target" placement="left" content="This is the popover content">
+</polymer-popover>
 ```
 
 ## Properties
