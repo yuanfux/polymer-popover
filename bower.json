@@ -15,8 +15,15 @@
   "resolutions": {
     "polymer": "^2.0.0"
   },
-  "keywords": ["popover", "popper", "tooltip", "polymer"],
-  "authors": ["Yuan Fu <yuanfu@usc.edu>"],
+  "keywords": [
+    "popover",
+    "popper",
+    "tooltip",
+    "polymer"
+  ],
+  "authors": [
+    "Yuan Fu <yuanfu@usc.edu>"
+  ],
   "ignore": [
     "**/.*",
     "bower_components",
