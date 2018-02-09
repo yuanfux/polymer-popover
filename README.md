@@ -27,19 +27,21 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
     <link rel="import" href="polymer-popover.html">
     <next-code-block></next-code-block>
   </template>
+  <script>
+    function changeVisibility() {
+      const popovers = document.querySelector(`[for=target]`);
+      popovers.hidden = !popovers.hidden;
+    }
+  </script>
 </custom-element-demo>
 ```
 -->
 ```html
 <div style="overflow: scroll; width: 2000px; padding: 350px;">
-	<div id="target" style="display: block; width: 50px; height: 50px; background-color: pink">
+	<div id="target" style="width: 100px; height: 100px; background-color: pink" onmouseenter="changeVisibility" onmouseleave="changeVisibility">
 	</div>
 </div>
-<polymer-popover for="target" placement="top" header="this is the popover header" content="This is the popover content" type="default">
-</polymer-popover>
-<polymer-popover for="target" placement="right" header="this is the popover header" content="This is the popover content" type="danger">
-</polymer-popover>
-<polymer-popover for="target" placement="bottom" header="this is the popover header" content="This is the popover content" type="warning">
+<polymer-popover for="target" placement="top" header="this is the popover header" content="This is the popover content" type="danger">
 </polymer-popover>
 <polymer-popover for="target" placement="left" header="this is the popover header" content="This is the popover content" type="primary">
 </polymer-popover>
