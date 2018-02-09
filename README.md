@@ -60,6 +60,7 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
     border-radius: 4px;
     text-align: center;
     line-height: 70px;
+    cursor: pointer;
   }
   #target:hover {
     background-color: #337ab7;
