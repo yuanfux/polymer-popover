@@ -46,9 +46,10 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 <style>
   .container {
     overflow: scroll;
-    width: 500px;
+    width: 1000px;
     padding-left: 300px;
     padding-top: 200px;
+    padding-bottom: 500px;
   }
   #target {
     width: 100px;
