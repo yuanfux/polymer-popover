@@ -18,10 +18,12 @@ An easy to use and run-time configurable popover component based on Polymer 2.0.
    `<link rel="import" href="YOUR_PATH/bower_components/polymer-popover/polymer-popover.html"`
 
 ## Usage
+
 ### Quick Start
 Specify `for`, `placement`, `content` and make sure your target element is inside `body` tag of the document. For more examples, please check out the demo in the `demo` folder.
 
-## Inline-demo
+## Inline Demo
+
 ### Check out this inline demo on [webcomponents](https://www.webcomponents.org/element/yuanfux/polymer-popover)
 <!--
 ```
