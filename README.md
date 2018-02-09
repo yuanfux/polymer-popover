@@ -32,8 +32,8 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 -->
 ```html
 <div class="container">
-  <div id="target" onmouseenter="changeVisibility(false)" onmouseleave="changeVisibility(true)">
-      Hover Me!
+  <div id="target" onclick="changeVisibility()">
+      Click Me!
   </div>
 </div>
 <polymer-popover for="target" placement="top" header="this is the popover header" content="This is the popover content" type="danger">
@@ -43,8 +43,9 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 <style>
   .container {
     overflow: scroll;
-    width: 2000px;
-    padding: 350px;
+    width: 500px;
+    padding-left: 300px;
+    padding-top: 200px;
   }
   #target {
     width: 100px;
@@ -65,7 +66,7 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
     function changeVisibility(hidden) {
       const popovers = document.querySelectorAll(`[for=target]`);
       popovers.forEach(
-        (popover) => { popover.hidden = hidden; });
+        (popover) => { popover.hidden = !popover.hidden; });
     }
 </script>
 ```
