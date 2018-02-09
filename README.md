@@ -27,12 +27,6 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
     <link rel="import" href="polymer-popover.html">
     <next-code-block></next-code-block>
   </template>
-  <script>
-    function changeVisibility() {
-      const popovers = document.querySelector(`[for=target]`);
-      popovers.hidden = !popovers.hidden;
-    }
-  </script>
 </custom-element-demo>
 ```
 -->
@@ -45,6 +39,12 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 </polymer-popover>
 <polymer-popover for="target" placement="left" header="this is the popover header" content="This is the popover content" type="primary">
 </polymer-popover>
+<script>
+    function changeVisibility() {
+      const popovers = document.querySelector(`[for=target]`);
+      popovers.hidden = !popovers.hidden;
+    }
+</script>
 ```
 
 ## Properties
