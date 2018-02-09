@@ -31,18 +31,41 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 ```
 -->
 ```html
-<div style="overflow: scroll; width: 2000px; padding: 350px;">
-	<div id="target" style="width: 100px; height: 100px; background-color: pink" onmouseenter="changeVisibility" onmouseleave="changeVisibility">
-	</div>
+<div class="container">
+  <div id="target" onmouseenter="changeVisibility(false)" onmouseleave="changeVisibility(true)">
+      Hover Me!
+  </div>
 </div>
 <polymer-popover for="target" placement="top" header="this is the popover header" content="This is the popover content" type="danger">
 </polymer-popover>
 <polymer-popover for="target" placement="left" header="this is the popover header" content="This is the popover content" type="primary">
 </polymer-popover>
+<style>
+  .container {
+    overflow: scroll;
+    width: 2000px;
+    padding: 350px;
+  }
+  #target {
+    width: 100px;
+    height: 70px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 70px;
+  }
+  #target:hover {
+    background-color: #337ab7;
+    color: white;
+  }
+</style>
 <script>
-    function changeVisibility() {
-      const popovers = document.querySelector(`[for=target]`);
-      popovers.hidden = !popovers.hidden;
+    function changeVisibility(hidden) {
+      const popovers = document.querySelectorAll(`[for=target]`);
+      popovers.forEach(
+        (popover) => { popover.hidden = hidden; });
     }
 </script>
 ```
