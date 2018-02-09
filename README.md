@@ -35,7 +35,13 @@ Specify `for`, `placement`, `content` and make sure your target element is insid
 	<div id="target" style="display: block; width: 50px; height: 50px; background-color: pink">
 	</div>
 </div>
-<polymer-popover for="target" placement="left" content="This is the popover content">
+<polymer-popover for="target" placement="top" header="this is the popover header" content="This is the popover content" type="default">
+</polymer-popover>
+<polymer-popover for="target" placement="right" header="this is the popover header" content="This is the popover content" type="danger">
+</polymer-popover>
+<polymer-popover for="target" placement="bottom" header="this is the popover header" content="This is the popover content" type="warning">
+</polymer-popover>
+<polymer-popover for="target" placement="left" header="this is the popover header" content="This is the popover content" type="primary">
 </polymer-popover>
 ```
 
@@ -51,7 +57,7 @@ offset | the offset of popover | string | '10, 10', '10%, 10', '10%, 10%' | '0, 
 z-index | the z-index of popover | number | 1000 | 999 | true
 type | the type of popover header | string | 'default', 'danger', 'warning', 'info', 'success', 'primary' | 'default' | true
 custom | if true the `content` will be omitted, `slot` will be enabled | boolean | false | false | false
-hidden | if true the popover will be visible | boolean | false | false | true
+hidden | if true the popover will be invisible | boolean | false | false | true
 
 ## Slots
 
