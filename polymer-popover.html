@@ -538,7 +538,8 @@
             readOnly: true
           },
           _popperPlacement: {
-            type: String
+            type: String,
+            readOnly: true
           },
           _popperObject: {
             type: Object,
@@ -600,7 +601,7 @@
                   }
                 },
                 onUpdate: (data) => {
-                  this['_popperPlacement'] = data.placement;
+                  this._set_popperPlacement(data.placement);
                 }
               }
           );
