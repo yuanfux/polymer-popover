@@ -6,7 +6,7 @@ A Polymer popover component empowered by Popper.js
 ## Preview
 An easy to use and run-time configurable popover component based on Polymer 2.0.
 
-![gif broken](https://drive.google.com/uc?id=119jxrSGKR4FqHORDuBFiri3W4qDIV1Nx "polymer-popover-demo")
+![image broken](./images/demoImage.png "polymer-popover-demo")
 
 ## Install
 1. Install bower dependency
