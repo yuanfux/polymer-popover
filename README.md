@@ -1,5 +1,6 @@
 # \<polymer-popover\>
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/yuanfux/polymer-popover)
+[![GitHub version](https://badge.fury.io/gh/yuanfux%2Fpolymer-popover.svg)](https://badge.fury.io/gh/yuanfux%2Fpolymer-popover)
 
 A Polymer popover component empowered by Popper.js
 
