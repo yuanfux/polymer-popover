@@ -1,6 +1,4 @@
-# \<polymer-popover\>
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/yuanfux/polymer-popover)
-[![GitHub version](https://badge.fury.io/gh/yuanfux%2Fpolymer-popover.svg)](https://badge.fury.io/gh/yuanfux%2Fpolymer-popover)
+# \<polymer-popover\>[![GitHub version](https://badge.fury.io/gh/yuanfux%2Fpolymer-popover.svg)](https://badge.fury.io/gh/yuanfux%2Fpolymer-popover) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/yuanfux/polymer-popover)
 
 A Polymer popover component empowered by Popper.js
 
@@ -16,7 +14,7 @@ An easy to use and run-time configurable popover component based on Polymer 2.0.
 
 2. Import polymer-popover component into your project
 
-   `<link rel="import" href="YOUR_PATH/bower_components/polymer-popover/polymer-popover.html"`
+   `<link rel="import" href="YOUR_PATH/bower_components/polymer-popover/polymer-popover.html>"`
 
 ## Usage
 
