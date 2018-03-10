@@ -4,7 +4,7 @@
 ## Preview
 An easy to use and run-time configurable popover component based on Polymer 2.0.
 
-![image broken](./images/demoImage.png "polymer-popover-demo")
+![image broken](./images/demo.gif "polymer-popover-demo")
 
 ## Install
 1. Install bower dependency
